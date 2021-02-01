@@ -118,11 +118,10 @@ print()
 print("*****  start section 8 - using random and converting to list ********")
 print()
 
-
+"""
 print()
 print("*****  end section 8 ********")
 print()
-"""
 
 # clear method will wipe out the dictionary,
 # get method will give you value but, it won't raise a key error. See example on slide
