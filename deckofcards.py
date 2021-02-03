@@ -8,10 +8,9 @@ def main():
 
     # Get the number of cards to deal.
     num_cards = int(input("How many cards should I deal? "))
-    number = num_cards
 
     # Deal the cards.
-    deal_cards(deck, number)
+    deal_cards(deck, num_cards)
 
 
 # The create_deck function returns a dictionary
@@ -81,7 +80,7 @@ def create_deck():
 # The deal_cards function deals a specified number of cards
 # from the deck.
 
-
+"""
 def deal_cards(deck, number):
     # Make sure the number of cards to deal is not
     # greater than the number of cards in the deck.
@@ -109,7 +108,7 @@ def deal_cards(deck, number):
 # Call the main function.
 main()
 
-"""
+
 # using pop item, currently doesn't work key things are tuple.
 def deal_cards(deck, number):
     if number > 52:
@@ -128,3 +127,36 @@ def deal_cards(deck, number):
         newdic = tuple(x)
     print("total value of cards:", total)
 """
+
+# class solution
+def deal_cards(deck, number):
+
+    # Initialize an accumulator for the hand value.
+    hand_value = 0
+    # Make sure the number of cards to deal is not
+    # greater than the number of cards in the deck.
+    if number > len(deck):
+        number = len(deck)
+
+    # Deal the cards and accumulate their values.
+    """
+    for count in range(number):
+        card, value = deck.popitem()
+        print(card)
+    for key in deck:
+        list_of_keys.append(key)
+
+    print(list_of_keys)
+    """
+    for count in range(number):
+        card = random.choice(list(deck))
+        value = deck[card]
+        print(card)
+        hand_value += value
+        del deck[card]
+
+    # Display the value of the hand.
+    print("Value of this hand:", hand_value)
+
+
+main()
